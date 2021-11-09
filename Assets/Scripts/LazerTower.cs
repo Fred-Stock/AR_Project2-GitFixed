@@ -10,16 +10,15 @@ public class LazerTower : MonoBehaviour
 
     public int team;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        
+        GameObject.Find("GameManager").GetComponent<GameManager>().AddTower(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        //Shoot();
     }
 
     public void Shoot(){
@@ -27,8 +26,8 @@ public class LazerTower : MonoBehaviour
         lineRenderer.startColor = Color.red;
         lineRenderer.endColor = Color.red;
 
-        lineRenderer.startWidth = .03f;
-        lineRenderer.endWidth = .03f;
+        lineRenderer.startWidth = .01f;
+        lineRenderer.endWidth = .01f;
 
         lineRenderer.SetPosition(0, barrel.transform.position);
         Vector3 curPos = barrel.transform.position;
@@ -62,9 +61,10 @@ public class LazerTower : MonoBehaviour
                     if(hit.collider.gameObject.GetComponent<Target>().team == this.team)
                     {
                         Debug.Log("WON!");
+                        GameObject.Find("GameManager").GetComponent<GameManager>().EndGame();
                         return;
                     }
-               
+
                 }
             }
 
