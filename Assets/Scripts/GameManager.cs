@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private List<GameObject> towers = new List<GameObject>();
 
     public void Start(){
-        StartGame();
+        // StartGame();
     }
 
     public void Update(){
