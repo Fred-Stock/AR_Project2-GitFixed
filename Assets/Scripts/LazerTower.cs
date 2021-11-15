@@ -12,7 +12,7 @@ public class LazerTower : MonoBehaviour
 
     void OnEnable()
     {
-        GameObject.Find("GameManager").GetComponent<GameManager>().AddTower(gameObject);
+        // GameObject.Find("GameManager").GetComponent<GameManager>().AddTower(gameObject);
     }
 
     // Update is called once per frame

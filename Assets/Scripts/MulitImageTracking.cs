@@ -25,7 +25,6 @@ public class MulitImageTracking : MonoBehaviour
     {
         trackedImageManager = GetComponent<ARTrackedImageManager>();
         instantiatedPrefabs = new Dictionary<string, GameObject>();
-
         trackedImageManager.trackedImagesChanged += OnTrackedImageChanged;
     }
 
